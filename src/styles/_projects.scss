@@ -1,29 +1,26 @@
 .card_wrapper {
-  width: 300px;
+  width: 100vw;
   height: 340px;
-  background-color: $mblue;
-  margin-top: 10px;
-  border-top: 19px solid $mblue;
-  border: 2px solid black;
-  border-radius: 2%;
-  margin-bottom: 30px;
+  background-color: inherit;
+
+  background-image: linear-gradient(45deg, $red, $pink);
 }
 .desktopbanner_pf {
   display: none;
 }
 .card_wrap_img {
-  background-color: $mblue;
+  background-color: inherit;
   height: 180px;
   width: 100%;
 }
 .cc_wrapp {
-  background-color: $mblue;
+  background-color: inherit;
   width: 80%;
   height: 100%;
   margin-left: 20%;
 }
 .card_wrap_btn {
-  background-color: $mblue;
+  background-color: inherit;
   height: 50px;
   width: 60%;
   justify-content: space-between;
@@ -39,12 +36,11 @@
   align-items: center;
 }
 .back_project_head {
-  width: 80%;
-  height: 340px;
+  width: 350px;
+  height: 240px;
   margin-left: auto;
   margin-right: auto;
   box-shadow: -17px 13px 41px rgba(0, 65, 144, 0.6);
-  animation: openDeck 1.9s ease-out forwards;
 }
 .all_project_skills {
   width: 100%;
@@ -54,8 +50,8 @@
   z-index: -1;
   width: 100%;
   padding-top: 101px;
-  height: 90vh;
-  background-image: linear-gradient(45deg, #00aeef 0%, #096fb9 100%);
+  height: 80vh;
+  background-image: linear-gradient(15deg, $mblue 0%, $lightblue 100%);
   box-shadow: -17px 13px 41px rgba(13, 78, 158, 0.6);
 }
 .card_title {
@@ -92,19 +88,20 @@
 .projectpftext {
   width: 80%;
   margin: auto;
-  margin-top: 24%;
-  @include animation-detail(1.9s);
+  margin-top: 280px;
+
+  @include animation-detail(0.9s);
 }
 .projectpftext p {
-  color: white;
   font-size: 28px;
   font-family: "Roboto", sans-serif;
+  color: $yellow;
 }
 
 .card_wrapper_image {
   width: 100%;
   height: 100%;
-  background-color: blue;
+  background-color: inherit;
 }
 .card_wrapper_text {
   font-family: "Roboto", sans-serif;
@@ -116,6 +113,42 @@
   flex-grow: 1;
   justify-content: center;
   column-gap: 20px;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 4s linear infinite;
+  -moz-animation: rotating 4s linear infinite;
+  -ms-animation: rotating 4s linear infinite;
+  -o-animation: rotating 4s linear infinite;
+  animation: rotating 4s linear infinite;
 }
 
 @keyframes openLine {
@@ -136,32 +169,46 @@
 @include media6 {
   .project_card_wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    width: 800px;
-    margin: auto;
+    justify-content: center;
+    width: 100%;
+    margin: auto auto;
+    background-image: linear-gradient(145deg, $teal 40%, $mblue 100%);
   }
-  .cc_wrapp {
+  .rotating {
+    -webkit-animation: rotating 8s linear infinite;
+    -moz-animation: rotating 8s linear infinite;
+    -ms-animation: rotating 8s linear infinite;
+    -o-animation: rotating 8s linear infinite;
+    animation: rotating 8s linear infinite;
   }
 
+  .projectpftext p {
+    font-size: 38px;
+    font-family: "Roboto", sans-serif;
+    color: $yellow;
+  }
   .card_wrap_btn {
-    height: 50px;
-    width: 30%;
+    background-color: inherit;
+    height: 80px;
+    width: 60%;
     justify-content: space-between;
-    margin-left: 30%;
-    margin-top: 8%;
+    margin-left: 20%;
+    margin-top: 123px;
     display: flex;
+    font-size: 33px;
+  }
+
+  .card_wrapper {
+    width: 670px;
+    height: 750px;
+    border: 2px solid $mblue;
   }
   .card_wrap_img {
-    background-color: $mblue;
-    height: 280px;
+    background-color: inherit;
+    height: 380px;
     width: 100%;
-  }
-  .card_wrapper {
-    width: 600px;
-    height: 450px;
-    margin-top: 30px;
   }
   .card_title {
     color: white;
@@ -169,17 +216,12 @@
     margin-top: 22px;
   }
   .back_project_head {
-    display: none;
-  }
-  .back_project_head_desktop {
-    width: 48%;
-    height: 560px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 140px;
+    width: 750px;
+    height: 640px;
+    margin-left: 300px;
     box-shadow: -17px 13px 41px rgba(0, 65, 144, 0.6);
-    animation: openDeck 1.9s ease-out forwards;
   }
+
   .all_project_skills {
     display: none;
   }

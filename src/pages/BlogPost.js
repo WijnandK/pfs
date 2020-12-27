@@ -1,13 +1,14 @@
-import React, { Component, Fragment } from "react";
+import React, { Component  } from "react";
 
 import Image from "../components/Image/Image";
-import i from "../static/images/i.png"
+ 
 import Button from "../components/Button/Button"
-import blogs from "../data";
-
+import {BLOGZ , blogs1} from "../data";
+ 
 class BlogPost extends Component {
   state = {
-    blogs: blogs,
+    blogs: BLOGZ,
+    blogsF: blogs1,
     title: "",
     author: "",
     date: "",
@@ -18,11 +19,18 @@ class BlogPost extends Component {
 
   async componentDidMount() {
     const blogz = [...this.state.blogs];
+    const blogf = [...this.state.blogsF]
     const postId = parseInt(this.props.match.params.postId);
-
-    const post = blogz.filter((blog) => {
+    let post
+      if (postId <= 3) {
+          post = blogz.filter((blog) => {
       return blog.id === postId;
-    });
+    })
+  } else if (postId > 3) {
+      post = blogf.filter((blog) => {
+      return blog.id === postId;
+    })
+  }
  
     this.setState({
       title: post[0].title,
@@ -36,24 +44,26 @@ class BlogPost extends Component {
 
   render() {
     return (
-      <div className="contain_wrapper">
-          <div className="single-post_space"/>
-      <div className="single-post_space_img"> 
-        <Image imageUrl={i} contain/>
-      </div>
+      <div className="contain_wrapper fadein">
+     <div className="single-post_space"/>
+          <div className="single-post__image">
+          <Image center imageUrl={this.state.image} />
+        </div>
+ 
+    
       <section className="single-post">
       
         <h1>{this.state.title}</h1>
         <h2>
           Created by {this.state.author} on {this.state.date}
         </h2>
-        <div className="single-post__image">
-          <Image center imageUrl={this.state.image} />
-        </div>
-        <p className="single-post__text">{this.state.content}</p>
-        <div className="singe-post__qoute"><h4>{this.state.q ? `" ${this.state.q} "`: null}   </h4></div>
+      <div className="postLine"/>
+                <div className="singe-post__qoute"><h4>{this.state.q ? `" ${this.state.q} "`: null}   </h4></div>
+      <div className="btn_post_side"><Button mode="raised" link="/blog">    Back          </Button> </div>
       
-      <Button mode="raised" link="/blog"> Back to Blogs</Button>
+        <p className="single-post__text">{this.state.content}</p>
+      
+      
       <div style={{paddingBottom: '100px'}}/>
       </section>
       

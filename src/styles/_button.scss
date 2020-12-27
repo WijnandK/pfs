@@ -54,26 +54,26 @@
 .button--raised:active {
   background: #520288;
 }
-
+// $yellow;
 .button.button--accent {
-  border-color: #fab83f;
-  color: #fab83f;
+  border-color: $yellow;
+  color: $yellow;
 }
 
 .button--accent:hover,
 .button--accent:active {
-  background: #fab83f;
+  background: $yellow;
   color: $lightblue;
 }
 
 .button--flat.button--accent:hover,
 .button--flat.button--accent:active {
   background: rgba(250, 184, 63, 0.3);
-  color: #fab83f;
+  color: $yellow;
 }
 
 .button.button--accent.button--raised {
-  background: #fab83f;
+  background: $yellow;
   color: $lightblue;
 }
 

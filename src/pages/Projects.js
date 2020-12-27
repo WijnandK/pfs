@@ -1,8 +1,7 @@
 import React, { Component, Fragment } from "react";
+ 
+import dl from "../static/images/dl.jpg";
 
-import allcom from "../static/images/allcom.png";
-
-import devcc from "../static/images/devcc.jpg";
 import Fade from "react-reveal/Fade";
 
  
@@ -23,10 +22,10 @@ class Projects extends Component {
     state = {
       showModal: false,
       renderinfo: "",
-      description1: "Mern stack project creating users and uploading placespictures, Mongo atlas and node with firebase front end hosting. Pictures will be deleted every 30minutes because of the free tierg",
+      description1: "MERN, creating users and uploading placespictures, Mongo atlas and node with firebase front end hosting. Pictures will be deleted every 30minutes due  of the free tier",
      description2: "NEXTJS & express ecommerce shop with admin utility, and a near perfect seo score due to serverside rendering, image uploaded with cloudinary",
       description3: "MERN project for a message board to collaborate, - Course project, simple  but effective in all the crud operations front & back",
-      description4: "Coming soon, -> customized ecommerce website for clients"
+      description4: "Making it easy on mobile to navigate and filter rides scheduled in excel"
 
     }
       closeModalHandler = () => {
@@ -35,7 +34,7 @@ class Projects extends Component {
   }
   openInfoModalHandler = (id) => {
     const id2 = id
-    console.log(id2)
+ 
     this.setState({showModal: true, renderinfo: id2})
   }
   render() {
@@ -57,37 +56,41 @@ modal = (
          
 
 <div className="project_wrapper_bck">
-  <div className="desktopbanner_pf fadein">
-   Presenting some projects
-  </div>
-  <div className="projectline"/>
+  
+ 
       
-      <div className="back_project_head">
-        <Image imageUrl={devcc} center/> 
+     
+      <div 
+  className="rotating"
+  style={{width: "100px", height: "100px" , lineHeight: "100px" , textAlign: "center"}} 
+    > 
+     <div className="back_project_head">
+        <Image imageUrl={dl} containc/> 
       </div> 
-      {/* DIFFERENT HEADER FOR DESKTOKP */}
-       <div className="back_project_head_desktop">
-<Image imageUrl={devcc} contain/> 
-      </div>
+    
+    </div>
       <div className="projectpftext fadein">
-      <p className="projectpftextp"> portfolio project skills </p> 
+      <p className="projectpftextp"> PORTFOLIO PROJECTS </p> 
       </div>
-              {/*DESKTOP   */}
+         <div className="postLine one"/>
               </div>  
-              {/* END OF BLUE BCK */}
-          <div className="all_project_skills">
-      <Image imageUrl={allcom} contain/>
-          </div>
-             {/* DIFFERENT HEADER FOR DESKTOKP */}
-          <div className="all_project_skills_desktop">
-      <Image imageUrl={allcom} center/>
-          </div>
-           {/*DESKTOP   */}
+    
+     
 
         <div className="project_card_wrapper">
+               <Fade bottom>
+  <Cardpf 
+    image={nodejsblack} 
+     col="one"
+    title="Excel schedule sort and display"   
+        visit="https://thirsty-almeida-c471b4.netlify.app"
+
+  openInfo={() => this.openInfoModalHandler(this.state.description4)}/>
+    </Fade>
           <Fade bottom>
    <Cardpf 
-    image={nstore} 
+    image={nstore}
+    col="z" 
     title="NEXTJS"
     visit="https://nextjsshop.now.sh/login"   
    openInfo={() => this.openInfoModalHandler(this.state.description2)}/>
@@ -95,6 +98,7 @@ modal = (
     <Fade bottom>
       <Cardpf 
               image={places} 
+               col="two"
               title="MERN FULLSTACK"   
               visit="https://maxplacesapp.web.app/"
               openInfo={() => this.openInfoModalHandler(this.state.description1)}/>   
@@ -102,16 +106,12 @@ modal = (
     <Fade bottom>
   <Cardpf 
     image={dconn} 
+     col="four"
     title="COURSE APP"   
     visit="https://powerful-ridge-27803.herokuapp.com/"
   openInfo={() => this.openInfoModalHandler(this.state.description3)}/>
     </Fade>
-      <Fade bottom>
-  <Cardpf 
-    image={nodejsblack} 
-    title="CUSTOMIZED SHOP"   
-  openInfo={() => this.openInfoModalHandler(this.state.description4)}/>
-    </Fade>
+ 
 
         </div>
       </div>

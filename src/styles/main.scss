@@ -17,6 +17,8 @@
 @import "./backdrop";
 @import "./infoModal";
 @import "./toolbar";
+@import "./SwiperP";
+
 // COMPONENTS
 html,
 body {
@@ -31,7 +33,7 @@ body {
 .toolbar {
   width: 100%;
   height: 3.5rem;
-  background: transparent;
+  background: inherit;
 }
 .avatar {
   width: 10rem;

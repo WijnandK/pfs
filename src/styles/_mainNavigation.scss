@@ -58,7 +58,8 @@
 .mobile-toggle__bar {
   width: 2.5rem;
   height: 4px;
-  background: white;
+  background: $white;
+  z-index: 2000;
 }
 
 @include media6 {

@@ -33,7 +33,7 @@ class App extends Component {
         window.addEventListener('scroll',this.handleScroll);
     }
       handleScroll = () => {
-       if(window.scrollY >  150){
+       if(window.scrollY >  90){
           
             this.setState({
                 scrolled: true,

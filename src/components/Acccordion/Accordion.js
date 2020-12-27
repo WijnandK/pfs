@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from "../Image/Avatar"
+ 
 import stud from "../../static/images/stud.svg"
 import controller from "../../static/images/controller.svg"
 import machine from "../../static/images/machine.svg"
@@ -61,7 +61,7 @@ class AccordionItem extends React.Component {
       props: {
         paragraph,
         title,
-        imageurl
+       
       },
       state: {
         opened

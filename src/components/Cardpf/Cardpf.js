@@ -2,12 +2,11 @@ import React from "react";
 import Button from "../Button/Button";
 import Image from "../Image/Image"
 
-import Fade from 'react-reveal/Fade'
-
+ 
 const Card = (props) => {
   return (
 
-    <div className="card_wrapper">
+    <div className={`card_wrapper ${props.col}`}>
         <div className="card_wrap_img">
           <div className="cc_wrapp">
    <Image imageUrl={props.image} contain/>
