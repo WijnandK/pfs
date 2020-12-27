@@ -16,7 +16,8 @@
 }
 .blogbtns {
   display: flex;
-
+  margin-bottom: 40px;
+  margin-top: 22px;
   flex-direction: row;
 }
 @include media6 {

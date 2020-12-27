@@ -8,7 +8,7 @@ import {BLOGZ , blogs1} from "../data"
 
 
 class Blog   extends React.Component {
-  state={blogs: BLOGZ, loading: true, title: BLOGZ[0].title}
+  state={blogs: BLOGZ, loading: true, title: BLOGZ[0].title, isActiveF: false, isActiveP: true}
 
 
     componentDidMount() {
@@ -20,12 +20,12 @@ class Blog   extends React.Component {
     setProgrammingBlock = () => {
       let blogs =  BLOGZ;
    let title = blogs[0].title
-      this.setState({blogs: blogs, title: title})
+      this.setState({blogs: blogs, title: title , isActiveF: false, isActiveP: true})
     }
  setFreeBlock = () => {
       let blogs = blogs1;
       let title = blogs[0].title
-      this.setState({blogs: blogs, title: title})
+      this.setState({blogs: blogs, title: title, isActiveF: true, isActiveP: false})
     }
     render() {
      
@@ -34,8 +34,8 @@ class Blog   extends React.Component {
            
             <div className="blogwrapper">
               <div className="blogbtns">
-    <Button design="accent" onClick={this.setProgrammingBlock}> Programming topics </Button>
-      <Button design="accent" onClick={this.setFreeBlock}>Freetime topics </Button>
+    <Button design="accent" mode={`${this.state.isActiveP ? "raised" : ""}  `} onClick={this.setProgrammingBlock}> Programming BLOGS  </Button>
+      <Button design="accent" mode={`${this.state.isActiveF ? "raised" : ""}  `} onClick={this.setFreeBlock}>Freetime  BLOGS </Button>
               </div>
           
               <div className="blog_program_banner">
