@@ -1,6 +1,6 @@
-import fitres from "./static/images/fitres.jpg"
+import rope from "./static/images/rope.jpg"
 import roli from "./static/images/roli.png"
-import med from "./static/images/med.jpg"
+import med2 from "./static/images/med2.jpg"
 import ai from "./static/images/ai.jpg"
 import nat  from "./static/images/nat.png"
 import b  from "./static/images/b.png"
@@ -46,7 +46,7 @@ export const BLOGZ = [
      q: 'Invest in yourself and see the results',
     content: 'Keeping a regular gym and a dieet sounds good, I like Mcdonalds pizza and netflix. ',
     author: 'Wijnand',
-    image: fitres,
+    image: rope,
     date: '4-dec-2020'} ,
     {id:5, 
         title: 'Deep relaxion mediation',
@@ -54,7 +54,7 @@ export const BLOGZ = [
     q: 'Clear your mind from stress and negativity',
     content: 'Prepare your mind for sweet dreams Wash away your daily problems and worries .Keep your mind healthy and young with mediation altough i myself tend too fall asleep..',
     author: 'Wijnand',
-    image: med,
+    image: med2,
     date: '28-nov-2020'
     },
     {id: 6, 
